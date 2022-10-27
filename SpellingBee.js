@@ -216,7 +216,7 @@ function UpdateTables() {
     }
     DataInput = El.DataInput.value.toUpperCase().split(/[^A-Z]+/).filter(x => x);
     if (!ValidateDataInput()) {
-        alert(`Invalid words in FOUND WORDS. Please correct.\n` + BadWords.join(",z"));
+        alert(`Invalid words in FOUND WORDS. Please correct.\n` + BadWords.join(", "));
         return;
     }
     let ProcessList = CullList();
