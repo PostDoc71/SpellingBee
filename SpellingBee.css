@@ -1,0 +1,63 @@
+#raw-stats {
+   font-size: medium;
+   font-family: Arial, Helvetica, sans-serif;
+   height: 52ch;
+   width: 44ch;
+ }
+
+#initialize {
+  margin-left: 4ch;
+  margin-right: 4ch;
+}
+
+#input {
+  border:2px solid blue;
+  margin-right: 2ch;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 90%;
+}
+
+#metastats1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 95%;
+  height: 4ch;
+  width:fit-content
+}
+
+#metastats2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  margin-right: 2ch;
+}
+
+#metastats3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 90%;
+  width:fit-content;
+  margin-left: 3ch;
+}
+
+#metastats4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  justify-content: center;
+}
+
+#update-tables {
+  margin-left: 54ch;
+  margin-top: -4ch;
+}
+
+table {
+  margin-left: 3ch;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+}
+
+table td {
+  height: 1ch;
+  width: 3ch;
+  margin-left: 5ch;
+  margin-right: 5ch;
+  text-align: center;
+}
