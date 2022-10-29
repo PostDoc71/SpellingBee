@@ -163,10 +163,6 @@ function InitializeData() {
             let subTotal = Number(char1Raw[indexRaw1]);
             temp[colLabel[j]] = subTotal;
             Char1List[indexList1].count[j] = subTotal;
-            // if (subTotal == 0) Table[row - 1][colLabel[j]] = '';
-// HELP: THIS IS SUPPOSED TO REMOVE UNNECESSARY LENGTH LABELS, WHICH APPEARS
-// TO WORK WHEN I STEP THROUGH THE BUILDING OF THE TABLE, BUT ERASES THE ENTIRE
-// LINE WHEN THE TABLE IS RENDERED.
             j++; indexRaw1++;
         }
         for (let i = ColStart; i <= ColEnd; i++) {
@@ -337,14 +333,25 @@ function DeleteHTMLTable () {
 function DisplayTable () {
     for (let i = 0; i < TableTotalRows; i++) {
         for (let j = 0; j <= ColEnd; j++) {
-            if (Table[i][j] != 0) Cell[i][j].element.innerHTML = (Table[i][j]);
+            // if (Table[i][j] != 0) Cell[i][j].element.innerHTML = (Table[i][j]);
+            Cell[i][j].element.innerHTML = Table[i][j];
         }
     }
+    // HELP: kludge to blank columns of "0". LINE 342 ABOVE USED TO NOT DISPLAY ALL "0"s.
+    // CODE BELOW DISPLAYS HELPFUL "0"s.
+    Char1List.forEach(item => {
+        for (let col = ColStart; col <= ColEnd; col ++) {
+            if (Table[item.rowStart][col] == 0) {
+                for (let row = item.rowStart - 1; row <= item.rowEnd + 1; row++) {
+                    Cell[row][col].element.innerHTML = '';
+                }
+            }
+        }
+    });
     return;
 }
 
-function DoneIsGray () {
-    for (let i = 0; i < Char1List.length; i++) {
+function DoneIsGray () {    for (let i = 0; i < Char1List.length; i++) {
         // check for completed rows
         for (let j = Char1List[i].rowStart + 1; j <= Char1List[i].rowEnd + 1; j++) {
             if (Table[j][1] === Table[j][2]) {
