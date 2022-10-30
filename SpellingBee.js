@@ -1,6 +1,19 @@
 'use strict'
 
 //======================================
+// DEBUGGERY
+//======================================
+let ElClearCrap = document.getElementById('clearcrap');
+ElClearCrap.addEventListener('click', ClearCrap);
+function ClearCrap () {
+    El.RawStats.innerHTML = '';
+    El.DataInput.innerHTML = '';
+    El.Wrapper.removeChild(ElClearCrap);
+    DeleteHTMLTable ();
+    return;
+}
+
+//======================================
 // GLOBAL VARIABLES
 //======================================
 
@@ -267,9 +280,7 @@ function CullList() {       // returns list of unprocessed words
 }
 
 function UpdateMetaStats () {
-    El.MetaStats1.innerHTML = '\xa0\xa0\xa0Total pangrams:<br>Pangrams Found:';
     El.MetaStats2.innerHTML = Pangrams + `<br>` + PangramsFound;
-    El.MetaStats3.innerHTML = '\xa0\xa0\xa0\xa0\xa0Total words:<br>\xa0\xa0Words Found:';
     El.MetaStats4.innerHTML = WordsTotal + `<br>` + WordsFound;
     return;
 }
@@ -311,8 +322,7 @@ function CreateHTMLTable() {
 
 function DeleteHTMLTable () {
 // HELP: THIS DELETES THE TABLE, BUT HOW DO I GET IT BACK? I KLUDGED BY CREATING
-// A LIST OF ANOTHER 10 TABLES TO KEEP IT WITHTN THE DOM.
-// IS querySelector A BETTER OPTION?
+// A LIST OF ANOTHER 19 TABLES TO KEEP IT WITHTN THE DOM.
     El.Wrapper.removeChild(El.Table);
     let table = "table" + ++TableCopy;
     El.Table = document.getElementById(table);
@@ -338,7 +348,7 @@ function DisplayTable () {
         }
     }
     // HELP: kludge to blank columns of "0". LINE 342 ABOVE USED TO NOT DISPLAY ALL "0"s.
-    // CODE BELOW DISPLAYS HELPFUL "0"s.
+    // CODE BELOW DISPLAYS HELPFUL "0"s BY FILTERING OUT UNHELPFUL "0"s.
     Char1List.forEach(item => {
         for (let col = ColStart; col <= ColEnd; col ++) {
             if (Table[item.rowStart][col] == 0) {
