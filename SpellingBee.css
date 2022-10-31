@@ -1,54 +1,60 @@
+#initialize {
+  margin-left: 2ch;
+  margin-right: 6ch;
+}
+
 #raw-stats {
-   font-size: medium;
-   font-family: Arial, Helvetica, sans-serif;
-   height: 52ch;
-   width: 44ch;
+  border: 2px solid blue;
+  font-size: 95%;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 51ch;
+  width: 44ch;
  }
 
-#initialize {
-  margin-left: 4ch;
-  margin-right: 4ch;
-}
-
 #input {
-  border: 2px solid blue;
-  margin-right: 2ch;
+  font-size: 90%;  border: 2px solid blue;
+  font-size: 95%;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 90%;
+  height: 51ch;
+  width: 25ch;
 }
-
-/* HELP - I can't seem to get the margins  and justfication to set in the METASTATS, so
-I put spaces into the HTML. */
 
 #metastats1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 95%;
-  height: 4ch;
   width: fit-content;
+  text-align: right;
+  height: 4ch;
 }
 
 #metastats2 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
+  text-align: right;
   margin-right: 2ch;
 }
+/* HELP - I can't seem to get the margins to set in the METASTATS, so
+I put spaces into the HTML. */
 
 #metastats3 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 95%;
   width: fit-content;
-  margin-left: 4ch;
+  text-align: right;
+  margin-left: 7ch;
 }
 
 #metastats4 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
-  justify-content: center;
+  text-align: right;
 }
 
 #update-tables {
   margin-left: 54ch;
-  margin-top: -4ch;
+  /* HELP: the line below used to raise the button level with
+     the METASTATs tables */
+  /* margin-top: -4ch; */
 }
 
 table {
