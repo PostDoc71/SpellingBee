@@ -6,7 +6,7 @@
     "author": "Karl Chun",
     "content_scripts": [{
         "matches": ["https://www.nytimes.com/puzzles/spelling-bee"],
-        "js": ["https://postdoc71.github.io/SpellingBeeHelp/BeeHive.js"]
+        "js": ["https://postdoc71.github.io/SpellingBee/BeeHive.css"]
     }]
     
 }
